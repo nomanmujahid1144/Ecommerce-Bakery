@@ -1,0 +1,138 @@
+<%- include('partials/header') -%>
+<!-- breadcrumb start -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">
+                        <h2>Product Detail</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb End -->
+
+
+    <!-- section start -->
+    <section>
+        <div class="collection-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="product-slick">
+                            <div><img src="../assets/images/pro3/<%= oneProduct.Image %>" alt=""
+                                    class="img-fluid blur-up lazyload image_zoom_cls-0">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="product-right product-description-box">
+                            <div class="product-count text-center">
+                                <h2><%= oneProduct.title %></h2>  
+                            </div>
+                            <div class="row product-accordion">
+                                <div class="col-sm-12">
+                                    <div class="accordion theme-accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0"><button class="btn btn-link" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">product
+                                                        description</button></h5>
+                                            </div>
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <p><%= oneProduct.description %></p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="product-right product-form-box">
+                            <h3>$ <%= oneProduct.price %></h3>
+                            <div id="selectSize" class="addeffect-section product-description border-product">
+                                
+                                <h6 class="product-title">quantity</h6>
+                                <div class="qty-box">
+                                    <div class="input-group"><span class="input-group-prepend"><button type="button"
+                                                class="btn quantity-left-minus" data-type="minus" data-field=""><i class="fas fa-angle-left"></i></button> </span>
+                                        <input type="text" name="quantity" class="form-control input-number" value="1">
+                                        <span class="input-group-prepend"><button type="button"
+                                                class="btn quantity-right-plus" data-type="plus" data-field=""><i class="fas fa-angle-right"></i></button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-buttons"><a href="javascript:void(0)"  id="cartEffect"
+                                    class="btn btn-solid hover-solid btn-animation">add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section ends -->
+
+
+    <!-- product-tab starts -->
+    <section class="tab-product m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="top-home-tab" data-bs-toggle="tab"
+                                href="#top-home" role="tab" aria-selected="true"><i
+                                    class="icofont icofont-ui-home"></i>Details</a>
+                            <div class="material-border"></div>
+                        </li>
+                    </ul>
+                    <div class="tab-content nav-material" id="top-tabContent">
+                        <div class="tab-pane fade show active" id="top-home" role="tabpanel"
+                            aria-labelledby="top-home-tab">
+                            <div class="product-tab-discription">
+                                <div class="part">
+                                    <p>The Model is wearing a white blouse from our stylist's collection, see the image
+                                        for a mock-up of what the actual blouse would look like.it has text written on
+                                        it in a black cursive language which looks great on a white color.</p>
+                                </div>
+                                <div class="part">
+                                    <h5 class="inner-title">fabric:</h5>
+                                    <p>Art silk is manufactured by synthetic fibres like rayon. It's light in weight and
+                                        is soft on the skin for comfort in summers.Art silk is manufactured by synthetic
+                                        fibres like rayon. It's light in weight and is soft on the skin for comfort in
+                                        summers.</p>
+                                </div>
+                                <div class="part">
+                                    <h5 class="inner-title">size & fit:</h5>
+                                    <p>The model (height 5'8") is wearing a size S</p>
+                                </div>
+                                <div class="part">
+                                    <h5 class="inner-title">Material & Care:</h5>
+                                    <p>Top fabric: pure cotton</p>
+                                    <p>Bottom fabric: pure cotton</p>
+                                    <p>Hand-wash</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product-tab ends -->
+
+
+    <!-- product section start -->
+    <section class="section-b-space ratio_asos">
+        
+    </section>
+    <!-- product section end -->
+
+<%- include('partials/footer') -%>

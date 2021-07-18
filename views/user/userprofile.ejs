@@ -1,0 +1,79 @@
+<%- include('partials/header') -%>
+ <!-- breadcrumb start -->
+ <div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>User Profile</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mt-5">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-3 " id="image">
+                    <img src="../assets/images/products/profile.jpeg" alt="..."  class="img-thumbnail img-fluid blur-up lazyload image_zoom_cls-0 rounded" style="border-radius: 50% !important; border: solid 1px black">
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 float-left ml-3">
+                    <div><h3>Account Detail's</h3></div>
+                    <div class="card">
+                        <div class="card-body" >
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <label><h4>Name:</h4></label>
+                                    <span class="user-profile-distance"><%= user.username %></span>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label><h4>Email:</h4></label>
+                                    <span class="user-profile-distance"><%= user.email %></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <label><h4>Address:</h4></label>
+                                    <span class="user-profile-distance"><%= user.address %></span>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label><h4>Phone:</h4></label>
+                                    <span class="user-profile-distance"><%= user.phoneno %></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                      </div>
+                      <div class="mt-5"><h3>Order History</h3></div>
+                      <div class="card mt-3 mb-5">
+                          <div class="card-body ">
+
+                            <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th >OrderID</th>
+                                    <th >Total Bill</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    
+                           <% order.forEach(function(order){  %>
+                                  <tr>
+                                    <td ><a href=""><%= order._id%></a></td>
+                                    <td ><%= order.cart.totalPrice %></td>
+                                  </tr>
+                          <%   }) %>
+                                </tbody>
+                              </table>
+                          </div>
+                      </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

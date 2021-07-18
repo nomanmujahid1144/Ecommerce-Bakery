@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from themes.pixelstrap.com/multikart/front-end/vegetables.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Mar 2021 07:45:17 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="multikart">
+    <meta name="keywords" content="multikart">
+    <meta name="author" content="multikart">
+    <link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+    <title>Pastries and Cakes</title>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&amp;display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!--Slick slider css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
+
+    <!-- Animate icon -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify-icons.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+</head>
+<script>
+    function printPageArea(tagid){
+        var hashid = "#"+ tagid;
+        var tagname =  $(hashid).prop("tagName").toLowerCase() ;
+        var attributes = ""; 
+        var attrs = document.getElementById(tagid).attributes;
+          $.each(attrs,function(i,elem){
+            attributes +=  " "+  elem.name+" ='"+elem.value+"' " ;
+          })
+        var divToPrint= $(hashid).html() ;
+        var head = "<html><head>"+ $("head").html() + "</head>" ;
+        var allcontent = head + "<body  onload='window.print()' >"+ "<" + tagname + attributes + ">" +  divToPrint + "</" + tagname + ">" +  "</body></html>"  ;
+        var newWin= window.open('', '', 'left=0,top=0,width=1000,height=900,toolbar=0,scrollbars=0,status=0');
+        newWin.document.open();
+        newWin.document.write(allcontent);
+        newWin.document.close();
+    }
+</script>
+<body class="theme-color-1">
+        <!-- header start -->
+        <header class="header-2">
+            <div class="mobile-fix-option"></div>
+            <div class="top-header " style="background: #805e3f ; color: white;">
+                <div class="container " >
+                    <div class="row" >
+                        <div class="col-lg-6" >
+                            <div class="header-contact ">
+                                <ul>
+                                    <li class="text-white">Welcome to Traditioanl Management System</li>
+                                    <li class="text-white"><i class="fa fa-phone" aria-hidden="true"></i>Call Us: +92 (3047204200)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-end">
+                            <ul class="header-dropdown">
+                                    <ul class="onhover-show-div">
+                                    <% if(!CurrentUser){ %>
+                                        <li ><a class=" text-white" href="/login">Login</a></li>
+                                        <li ><a class=" text-white" href="/register">Sign Up</a></li>
+                                    <% }else{ %>   
+                                        <li ><a class=" text-white d-flex align-items-end" style="padding-bottom: 10px;" href="/userprofile">Sign in as <%= CurrentUser.username %></a></li> 
+                                        <li ><a class=" text-white d-flex align-items-start"  href="/logout">Logout</a></li>
+                                    <% } %>    
+                                    </ul>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main-menu border-section border-top-0">
+                            <div class="menu-left">
+                                <div class="navbar"></div>
+                            </div>
+                            <div class="brand-logo layout2-logo">
+                                <a href="#"><img src="../assets/images/icon/logo.png" class="img-fluid blur-up lazyload"
+                                        alt=""></a>
+                            </div>
+                            <div class="menu-right pull-right">
+                                <div class="icon-nav">
+                                    <ul>
+                                        <li class="onhover-div mobile-setting">
+                                           
+                                        </li>
+                                        <li class="onhover-div mobile-cart">
+                                            <div>
+                                                <% if(session.cart){ %>
+                                               <a href="/cart"> <img src="../assets/images/icon/shopping-cart.png"
+                                                    class="img-fluid blur-up lazyload" alt=""> 
+                                                    <i class="fal fa-cart-plus"></i>
+                                                    <% if(session.cart.totalQty > 0){ %>
+                                                        <span  class="badge " style="background: #805e3f; display: inline-block;">
+                                                            <%= session.cart.totalQty %>
+                                                        </span>
+                                                    <% } %>
+                                                    
+                                                </a>
+                                                <% } %>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main-nav-center">
+                            <nav id="main-nav">
+                                <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
+                                <ul id="main-menu" class="sm pixelstrap sm-horizontal">
+                                    <li>
+                                        <div class="mobile-back text-end">Back<i class="fa fa-angle-right ps-2"
+                                                aria-hidden="true"></i></div>
+                                    </li>
+                                    <li><a href="/index">Home</a></li>
+                                    <li>
+                                        <a href=''>Products <i class="fas fa-angle-down"  style="margin-left: 1rem;"></i></a>
+                                        <ul>
+                                            <li><a href='/products'>All</a></li> 
+                                            <li><a href='/products/Cake'>Cake</a></li>
+                                            <li><a href='/products/Pastries'>Pastrie</a></li>
+                                            <li><a href="/products/Sweets">Sweets</a></li>
+                                            <li><a href='/products/Biscuite'>Biscuite</a></li>
+                                            <li><a href='/products/Pizza'>Pizza</a></li>
+                                            <li><a href='/products/Burger'>Burger</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/contact">contact</a></li>
+                                    <li><a href="/faq">FAQ</a></li>
+                                    <li><a href="/aboutus">about us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+

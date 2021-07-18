@@ -1,0 +1,117 @@
+<%- include('partials/adminheader') -%>
+<%- include('partials/sidebar') -%>
+        <div class="page-body">
+
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header-left">
+                                <h3>Add Products
+                                    <small>Pastries and Cakes Admin panel</small>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <ol class="breadcrumb pull-right">
+                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                                <li class="breadcrumb-item active">Add Product</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Container-fluid Ends-->
+
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Add Product</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row product-adding">
+                                    <div class="col-xl-7">
+                                        <form action="/admin/product" method="POST" enctype="multipart/form-data" class="needs-validation add-product-form" novalidate="">
+                                            <div class="form">
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
+                                                    <div class="col-xl-8 col-sm-7">
+                                                        <input class="form-control" name="Title" id="validationCustom01" type="text" required="" >
+                                                    </div>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price :</label>
+                                                    <div class="col-xl-8 col-sm-7">
+                                                        <input class="form-control" name="price" id="validationCustom02" type="text" required="">
+                                                    </div>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
+                                                    <div class="col-xl-8 col-sm-7">
+                                                        <input class="form-control" name="productcode" id="validationCustomUsername" type="text" required="">
+                                                    </div>
+                                                    <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
+                                                </div>
+                                            </div>
+                                            <div class="form">
+                                                <div class="form-group row">
+                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Image :</label>
+                                                    <div class="col-xl-8 col-sm-7">
+                                                        <div class=" mb-0">
+                                                            <input type="file" name="image" class="form-control" id="validatedCustomFile" required>
+                                                            <!-- <label class="custom-file-label" for="validatedCustomFile"></label> -->
+                                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
+                                                    <div class="col-xl-8 col-sm-7">
+                                                        <div class=" mb-0">
+                                                            <select class="form-select" name="category"  aria-label="Default select example">
+                                                                <option >Category</option>
+                                                                <option value="Cake">Cake</option>
+                                                                <option value="Pastries">Pastries</option>
+                                                                <option value="Sweets">Sweets</option>
+                                                                <option value="Biscuite">Biscuite</option>
+                                                                <option value="Pizza">Pizza</option>
+                                                                <option value="Burger">Burger</option>
+                                                            </select>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-xl-3 col-sm-4 mb-0">Total Products :</label>
+                                                        <div class=" col-xl-8 col-sm-7 ">
+                                                            <input class="form-control" name="totalproducts" type="number" value="1">
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-xl-3 col-sm-4">Add Description :</label>
+                                                    <div class="col-xl-8 col-sm-7 description-sm">
+                                                        <textarea id="editor1" name="description" class="form-control"  ></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="offset-xl-3 offset-sm-4">
+                                                <button  type="submit" class="btn btn-primary">Add</button>
+                                                <!-- <button type="button" class="btn btn-light">Discard</button> -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Container-fluid Ends-->
+
+        </div>
+<%- include('partials/adminfooter') -%>
